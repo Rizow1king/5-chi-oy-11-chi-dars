@@ -115,9 +115,46 @@ class DataBase:
 
 
 db = DataBase()
+db = DataBase()
+
 db.create_categories()
 db.create_news()
 db.create_comments()
+
 db.insert_categories()
 db.insert_news()
 db.insert_comments()
+
+print("Alias News:")
+print(db.select_alias_news())
+
+print("\nTechnology News:")
+print(db.select_technology())
+
+print("\nPublished News:")
+print(db.select_is_published())
+
+print("\nViews in range (10-100):")
+print(db.select_views())
+
+print("\nComments by authors starting with 'A':")
+print(db.select_author_name('A%'))
+
+print("\nAll Categories with news count:")
+print(db.select_all_categories())
+
+print("\nUpdating news views...")
+db.update_news()
+print("Views updated.")
+
+print("\nPublishing news older than 1 day...")
+db.update_news_days()
+print("Old news published.")
+
+print("\nDeleting old comments...")
+db.delete_comments()
+print("Old comments deleted.")
+
+print("\nAdding unique constraint to news titles...")
+db.unique_title()
+print("Unique constraint added.")
